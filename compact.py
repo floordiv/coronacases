@@ -1,0 +1,1 @@
+for c,n in zip(['Total cases','Death cases','Recover cases'],__import__('bs4').BeautifulSoup(__import__('requests').get('https://www.worldometers.info/coronavirus/').text,features='lxml').find_all('div',{'class':'maincounter-number'})):print(c+':',n.find('span').getText())
